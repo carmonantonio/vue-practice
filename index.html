@@ -19,10 +19,15 @@
                 </li>
             </ul>-->
             <ul>
-            <li v-for="(value, key, index) in persona">
-                {{index+1}} -<strong> {{key}} </strong>: {{value}}
-            </li>
+                <li v-for="tarea in tareas">
+                    {{tarea}}
+                </li>
             </ul>
+            <form v-on:submit.prevent="agregarTareas">
+                <input type="text" placeholder="Introduce tu tarea"  v-model="nuevaTarea">
+                <input type="submit" value="enviar tarea" > 
+            </form>
+           
             
             <pre>
             {{$data}}

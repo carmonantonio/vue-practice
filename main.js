@@ -2,15 +2,23 @@ const vm= new Vue({
     el: 'main',
     data:{
         laborales: ['lunes','martes','miercoles','jueves','viernes'],
+        nuevaTarea: null,
         tareas:[
-            {nombre:'Dormir', prioridad:'Alta'},
-            {nombre:'Aprender Vue', prioridad:'Alta'},
-            {nombre:'Hacer otra cosa', prioridad:'Baja'},
+                'Aprender Vue',
+                'Hacer una cosa',
+                'Hacer otra',
         ],
         persona:{
             Nombre:'Antonio',
             Ocupacion: 'Programador',
             Ciudad: 'Caracas',
         },
+       
     },
+     methods: {
+            agregarTareas(){
+               this.tareas.unshift(this.nuevaTarea);
+               this.nuevaTarea = '';
+            },
+        },
 })
